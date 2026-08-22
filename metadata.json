@@ -1,0 +1,6 @@
+{
+  "name": "Brew Haven Cafe",
+  "description": "Modern cafe website featuring an interactive menu, online food ordering with real-time tracking, table reservation system, customer reviews, photo gallery, and Firebase Auth.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

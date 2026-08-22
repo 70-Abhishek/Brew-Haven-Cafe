@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+	--color-stone-50: #fbf7ef;
+	--color-stone-100: #f3eadb;
+	--color-stone-200: #e6d6bf;
+	--color-stone-300: #d3b995;
+	--color-stone-400: #b9956d;
+	--color-stone-500: #8f6b4d;
+	--color-stone-600: #6f4a32;
+	--color-stone-700: #573522;
+	--color-stone-800: #3d2418;
+	--color-stone-900: #2a1710;
+	--color-stone-950: #1b0f0a;
+
+	--color-amber-100: #f8e8b0;
+	--color-amber-200: #f0d47a;
+	--color-amber-300: #e8bf4a;
+	--color-amber-400: #d9a927;
+	--color-amber-500: #c69214;
+	--color-amber-600: #a87308;
+	--color-amber-700: #80530a;
+	--color-amber-800: #633e08;
+	--color-amber-900: #452a06;
+	--color-amber-950: #2b1a04;
+
+	--font-sans: 'DM Sans', 'Avenir Next', sans-serif;
+	--font-serif: 'Playfair Display', Georgia, serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background-color: #fbf7ef;
+	background-image: radial-gradient(rgba(87, 53, 34, 0.08) 0.7px, transparent 0.7px);
+	background-size: 18px 18px;
+	font-family: 'DM Sans', 'Avenir Next', sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+:root.dark body {
+	background-color: #1b0f0a;
+	background-image: radial-gradient(rgba(248, 232, 176, 0.06) 0.7px, transparent 0.7px);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+	touch-action: manipulation;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+	outline: 2px solid #d9a927;
+	outline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f3eadb;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #8f6b4d;
+	border: 3px solid #f3eadb;
+	border-radius: 999px;
+}
+
+:root.dark ::-webkit-scrollbar-track {
+	background: #2a1710;
+}
+
+:root.dark ::-webkit-scrollbar-thumb {
+	background: #a87308;
+	border-color: #2a1710;
+}
