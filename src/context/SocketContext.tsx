@@ -16,8 +16,9 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    // Connect to your Render backend
-    const newSocket = io('https://artisan-cafe-backend.onrender.com');
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    const socketUrl = apiUrl.replace(/\/api\/?$/, '');
+    const newSocket = io(socketUrl);
     setSocket(newSocket);
 
     return () => {

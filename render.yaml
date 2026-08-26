@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: brew-haven-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+
+  - type: static
+    name: brew-haven-web
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://brew-haven-api.onrender.com/api
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

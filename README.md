@@ -145,7 +145,7 @@ Create server/.env (copy from .env.example) and fill in your values:
 
 env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/artisan_cafe
+MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@brew-haven-cafe.forlqby.mongodb.net/artisan_cafe
 JWT_SECRET=your_super_secret_key_here
 EMAIL_USER=your_email@gmail.com
 EMAIL_PASS=your_app_password   # For Gmail, use an App Password (not your regular password)
@@ -180,6 +180,15 @@ Now open your browser at http://localhost:3000 – the Brew Haven Cafe app is li
 
 If port 5000 is busy, the backend automatically tries the next available port (5001, etc.).
 Update src/api/client.js with the correct port if needed.
+
+## Deploy to Render
+
+1. Push this repository to GitHub and create a new **Blueprint** in Render.
+2. Select the repository. Render will use `render.yaml` to create the API and static frontend services.
+3. In the API service, set `MONGODB_URI` to a MongoDB Atlas connection string and fill in `EMAIL_USER` and `EMAIL_PASS` if email notifications are needed.
+4. If you change the API service name, update the frontend service's `VITE_API_URL` to `https://<api-service>.onrender.com/api`, then redeploy the frontend.
+
+The frontend service is configured with an SPA rewrite, and the backend listens on Render's `PORT` environment variable. Keep `JWT_SECRET` configured in Render and never commit `.env` files.
 
 🌐 API Endpoints
 All endpoints are prefixed with /api.
