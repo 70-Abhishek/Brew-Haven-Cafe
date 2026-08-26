@@ -14,6 +14,10 @@ const io = new Server(server, {
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', service: 'Brew Haven API' });
+});
+
 // Attach io to req
 app.use((req, res, next) => {
   req.io = io;
@@ -66,3 +70,6 @@ function startServer(port) {
 }
 
 startServer(DEFAULT_PORT);
+
+VITE_API_URL = `http://localhost:${DEFAULT_PORT}`;
+console.log('VITE_API_URL', VITE_API_URL);
