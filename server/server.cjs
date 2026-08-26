@@ -70,6 +70,3 @@ function startServer(port) {
 }
 
 startServer(DEFAULT_PORT);
-
-VITE_API_URL = `http://localhost:${DEFAULT_PORT}`;
-console.log('VITE_API_URL', VITE_API_URL);
